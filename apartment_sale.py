@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 def get_data(gu_code, base_date):
     url="http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade"
+    #.env파일에서 서비스키 불러오기
     load_dotenv()
     service_key = os.environ.get('service_key')
 
