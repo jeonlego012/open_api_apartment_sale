@@ -3,10 +3,12 @@ import datetime
 import xml.etree.ElementTree as ET
 import pandas as pd
 import os
+from dotenv import load_dotenv
 
 def get_data(gu_code, base_date):
     url="http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade"
-    service_key = "<인증키>"
+    load_dotenv()
+    service_key = os.environ.get('service_key')
 
     payload = dict()
     payload["LAWD_CD"] = gu_code
